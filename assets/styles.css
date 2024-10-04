@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --text-color: #333;
+    --background-color: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    overflow-x: hidden;
+}
+
+.party-lights {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background:
+            radial-gradient(circle at 50% 50%, rgba(255, 0, 0, 0.5) 0%, transparent 20%),
+            radial-gradient(circle at 20% 80%, rgba(0, 255, 0, 0.5) 0%, transparent 20%),
+            radial-gradient(circle at 80% 20%, rgba(0, 0, 255, 0.5) 0%, transparent 20%);
+    background-size: 200% 200%;
+    animation: partyLights 5s linear infinite;
+}
+
+@keyframes partyLights {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 200%; }
+}
+
+.flowers {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image:
+            url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><circle cx="25" cy="25" r="20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/><circle cx="25" cy="25" r="10" fill="rgba(255,255,255,0.1)"/></svg>');
+    background-size: 100px 100px;
+    opacity: 0.5;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 3rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+section.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+}
+
+#hero {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 5px solid var(--primary-color);
+}
+
+.tagline {
+    font-style: italic;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+.big-heart {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 90px;
+    margin-bottom: 1rem;
+}
+
+.big-heart:before,
+.big-heart:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: red;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.big-heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+.mouse {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background-color: #888;
+    border-radius: 50%;
+    margin: 20px auto;
+}
+
+.mouse-ear {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #888;
+    border-radius: 50%;
+}
+
+.mouse-ear.left {
+    top: -10px;
+    left: 5px;
+}
+
+.mouse-ear.right {
+    top: -10px;
+    right: 5px;
+}
+
+.mouse-face {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    background-color: #pink;
+    border-radius: 20px 20px 40px 40px;
+    bottom: 20px;
+    left: 20px;
+}
+
+.mouse-face:before,
+.mouse-face:after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #000;
+    border-radius: 50%;
+    top: 5px;
+}
+
+.mouse-face:before {
+    left: 8px;
+}
+
+.mouse-face:after {
+    right: 8px;
+}
